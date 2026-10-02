@@ -1,0 +1,87 @@
+# ================================
+# Python
+# ================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ================================
+# Virtual environments
+# ================================
+
+.venv/
+venv/
+env/
+ENV/
+.env
+
+# ================================
+# Jupyter Notebook
+# ================================
+
+.ipynb_checkpoints/
+
+# ================================
+# Testing / Coverage
+# ================================
+
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ================================
+# Build / Packaging
+# ================================
+
+build/
+dist/
+*.egg-info/
+
+# ================================
+# IDEs / Editors
+# ================================
+
+.vscode/
+.idea/
+
+# ================================
+# OS files
+# ================================
+
+.DS_Store
+Thumbs.db
+
+# ================================
+# Logs
+# ================================
+
+*.log
+
+# ================================
+# Temporary files
+# ================================
+
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# ================================
+# Secrets / Local configuration
+# ================================
+
+.env
+*.env
+
+# ================================
+# Experiment outputs
+# ================================
+
+# Descomenta estas líneas solamente si
+# posteriormente decides no versionar estos archivos:
+#
+# results/
+# outputs/
+# checkpoints/
+# models/

@@ -1,0 +1,10 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pkl
+*.mp4
+*.avi
+*.mov
+*.gif
+.DS_Store

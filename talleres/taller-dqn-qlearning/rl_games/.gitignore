@@ -3,9 +3,14 @@ __pycache__/
 *.py[codz]
 *$py.class
 
-# Add saves
+
+# Ignore generated saves by default, but publish trained models
 saves/**
 !saves/.gitkeep
+!saves/*.pt
+!saves/*.pth
+!saves/*.pkl
+
 
 # C extensions
 *.so

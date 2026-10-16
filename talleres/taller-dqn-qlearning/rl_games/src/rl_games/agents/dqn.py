@@ -138,7 +138,9 @@ class DQNAgent(BaseAgent):
             dtype=torch.float32,
             device=self.device,
         ).unsqueeze(0)
-
+        # QNetwork expects a batch, even when selecting an action for one state.
+        if state_tensor.ndim == 1:
+            state_tensor = state_tensor.unsqueeze(0)
         with torch.no_grad():
             q_values = self.q_net(state_tensor)
 
@@ -187,9 +189,10 @@ class DQNAgent(BaseAgent):
             dtype=torch.float32,
             device=self.device,
         )
-
+        # Keep only Q(s, a), the value predicted for the action actually taken.
         current_q = self.q_net(states).gather(1, actions).squeeze(1)
 
+        # Bellman target. A terminal transition has no bootstrapped future value.
         with torch.no_grad():
             next_q = self.target_net(next_states).max(dim=1).values
             target_q = rewards + self.gamma * next_q * (1.0 - dones)
